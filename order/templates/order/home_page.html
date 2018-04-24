@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prince Benson Waimai</title>
+</head>
+<body>
+	<h1>Prince Benson Fusion Restaurant</h1>
+	<p>Tasty Treats To Your Door</p>
+
+	<h2>Here are all our items!</h2>
+
+	<!-- Item 1 -->
+	<p>Noodles: 30RMB</p>
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524584692809&di=f735e76a05eeac2c31c0cccfda0a2f48&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D3104138341%2C1533383803%26fm%3D214%26gp%3D0.jpg">
+	<br>
+
+	<!-- Item 2 -->
+	<p>Rice: 2RMB</p>
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524584755712&di=3f89cdefa9f47eb76df1f10fa56ceb70&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F5bafa40f4bfbfbedd46369e172f0f736afc31f71.jpg">
+
+	<!-- Item 3 -->
+	<p>Spaghatti: 32RMB</p>
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524584789269&di=3899e6029e39aa948e17ed06bbea9831&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Ftransform%2F20150420%2FWvbx-avxeafs5862351.jpg">
+
+	<!-- Order Form -->
+	<h2>Place your Order</h2>
+	<form action="{% url 'order:home_page' %}" method="POST">
+		{% csrf_token %}	
+		<input type="text" name="order" placeholder="Please Type Which Item You Want"><br>
+		<textarea name="address" placeholder="Please Type Your Address"></textarea><br>
+		<input type="submit" value="Place Your Order">
+	</form>
+
+	<!-- Show Order -->
+	<h1>Your Order:</h1>
+	<p>Order: {{order}}</p>
+	<p>Delivery Address: {{address}}</p>
+
+</body>
+</html>
